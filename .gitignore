@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+.next
+cdk.out
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Turbo
+.turbo
+
+# Misc
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts

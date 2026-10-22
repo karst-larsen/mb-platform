@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/karstenoneill-larsen/Code/mb-platform && pnpm typecheck 2>&1 | tail -20"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/karstenoneill-larsen/Code/mb-platform && pnpm verify"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport os, sys, json\ntry:\n    inp = json.loads(os.environ.get('CLAUDE_TOOL_INPUT', '{}'))\n    path = inp.get('file_path', inp.get('path', ''))\nexcept Exception:\n    path = ''\nimport re\nif re.search(r'(\\.test\\.|\\.spec\\.|__tests__|__fixtures__)', path):\n    print('ERROR: Editing test files is locked. Add \\\"--unlock-tests\\\" to your task description to proceed.')\n    sys.exit(1)\n\""
+          }
+        ]
+      }
+    ]
+  }
+}
