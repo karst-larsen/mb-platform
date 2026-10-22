@@ -16,6 +16,9 @@ cdk.out
 # Turbo
 .turbo
 
+# CDK
+cdk.context.json
+
 # Misc
 .DS_Store
 *.tsbuildinfo
