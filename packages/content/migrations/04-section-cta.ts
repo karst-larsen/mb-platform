@@ -11,4 +11,4 @@ const migration: MigrationFunction = (migration) => {
   cta.createField('ctaUrl').name('CTA URL').type('Symbol').required(true);
 };
 
-export default migration;
+module.exports = migration;

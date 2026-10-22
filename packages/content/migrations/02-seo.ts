@@ -10,4 +10,4 @@ const migration: MigrationFunction = (migration) => {
   seo.createField('noIndex').name('No Index').type('Boolean');
 };
 
-export default migration;
+module.exports = migration;

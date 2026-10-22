@@ -1,9 +1,7 @@
 import { runMigration } from 'contentful-migration';
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const migrationsDir = path.join(__dirname, '../migrations');
 
 async function main() {
