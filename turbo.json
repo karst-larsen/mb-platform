@@ -16,7 +16,19 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": [
+        "CONTENTFUL_SPACE_ID",
+        "CONTENTFUL_DELIVERY_TOKEN",
+        "CONTENTFUL_PREVIEW_TOKEN",
+        "CONTENTFUL_MANAGEMENT_TOKEN",
+        "CONTENTFUL_WEBHOOK_SECRET",
+        "NEXT_PUBLIC_SENTRY_DSN",
+        "SENTRY_DSN",
+        "SENTRY_AUTH_TOKEN",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT"
+      ]
     }
   }
 }
