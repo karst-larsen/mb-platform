@@ -1,4 +1,4 @@
-import { revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import type { NextRequest } from 'next/server';
 import { z } from 'zod';
 import * as Sentry from '@sentry/nextjs';
@@ -36,10 +36,6 @@ export async function POST(request: NextRequest) {
     });
     return new Response('Invalid payload', { status: 422 });
   }
-  const { id: entryId, contentType } = result.data.sys;
-  revalidateTag(`entry:${entryId}`);
-  if (contentType?.sys.id === 'page') {
-    revalidateTag('pages');
-  }
+  revalidatePath('/', 'layout');
   return new Response('OK', { status: 200 });
 }
