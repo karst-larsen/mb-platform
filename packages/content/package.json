@@ -4,12 +4,25 @@
   "private": true,
   "main": "./src/index.ts",
   "types": "./src/index.ts",
+  "type": "module",
   "scripts": {
+    "migrate": "tsx scripts/run-migrations.ts",
+    "seed": "tsx scripts/seed.ts",
+    "create-locale": "tsx scripts/create-locale.ts",
+    "register-webhook": "tsx scripts/register-webhook.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "test": "echo \"No tests\" && exit 0"
   },
   "devDependencies": {
+    "@types/node": "^26.6.5",
+    "contentful-migration": "^5.1.1",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "contentful": "^11.12.10",
+    "contentful-management": "^12.19.2",
+    "zod": "^4.6.7"
   }
 }
