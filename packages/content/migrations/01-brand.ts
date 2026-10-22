@@ -10,4 +10,4 @@ const migration: MigrationFunction = (migration) => {
   brand.changeFieldControl('slug', 'builtin', 'slugEditor');
 };
 
-export default migration;
+module.exports = migration;

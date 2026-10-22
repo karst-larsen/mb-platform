@@ -11,4 +11,4 @@ const migration: MigrationFunction = (migration) => {
   hero.createField('ctaUrl').name('CTA URL').type('Symbol');
 };
 
-export default migration;
+module.exports = migration;

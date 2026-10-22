@@ -28,4 +28,4 @@ const migration: MigrationFunction = (migration) => {
   page.changeFieldControl('slug', 'builtin', 'slugEditor');
 };
 
-export default migration;
+module.exports = migration;
